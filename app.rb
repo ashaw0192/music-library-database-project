@@ -8,3 +8,6 @@ repo = AlbumsRepository.new
 repo.all.each do |album|
   p album
 end
+
+found = repo.find(3)
+p found.id + " - " + found.title + " - " + found.release_year + " - " + found.artist_id

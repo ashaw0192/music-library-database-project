@@ -94,9 +94,10 @@ repo = AlbumsRepository.new
 
 album = repo.find(1)
 
-student.id # =>  1
-student.name # =>  'David'
-student.cohort_name # =>  'April 2022'
+album.id # =>  1
+album.name # =>  'Doolittle'
+album.release_year # =>  '1989'
+album.artist_id # => '1'
 
 # Add more examples for each method
 Encode this example as a test.
