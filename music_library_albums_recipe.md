@@ -62,7 +62,13 @@ class AlbumsRepository
     # Returns a single Album object.
   end
 
-end
+  # Adds an album to the albums table
+  # One argument, the album object
+  def creat(album)
+    # Executes the SQL query:
+    # INSERT INTO albums (title, release_year, artist_id) VALUES ($1, $2, $3);
+  end
+
 
 ```
 6. Write Test Examples
@@ -88,7 +94,7 @@ albums[-1].release_year # =>  '1973'
 albums[-1].artist_id # =>  '2'
 
 # 2
-# Get a single student
+# Get a single album
 
 repo = AlbumsRepository.new
 
@@ -98,6 +104,26 @@ album.id # =>  1
 album.name # =>  'Doolittle'
 album.release_year # =>  '1989'
 album.artist_id # => '1'
+
+# 3 
+# Create a new record for an album
+
+repo = AlbumsRepository.new
+
+album = Album.new
+album.title = 'Trompe le Monde'
+album.release_year = 1991
+album.artist_id = 1
+
+repo.create(album)
+
+albums = repo.all
+albums.length # => 6
+albums[-1].id # => '6'
+albums[-1].title # => 'Trompe le Monde'
+albums[-1].release_year # => '1991'
+albums[-1].artist_id # => '1'
+
 
 # Add more examples for each method
 Encode this example as a test.
